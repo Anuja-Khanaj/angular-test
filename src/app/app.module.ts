@@ -12,6 +12,9 @@ import { UserService } from './Services/user.service';
 import { HomeService } from './Services/home.service';
 import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
+import { SliderComponent } from './slider/slider.component';
+import { NextDirective } from './Directive/next.directive';
+import { PrevDirective } from './Directive/prev.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     HomeComponent,
     UserlistingComponent,
-    CreateuserComponent
+    CreateuserComponent,
+    SliderComponent,
+    NextDirective,
+    PrevDirective
   ],
   imports: [
     BrowserModule,
