@@ -1,0 +1,84 @@
+<h2 class="text-center my-3">- Add User -</h2>
+
+<div class="container form my-2 d-flex justify-content-center ">
+    <form [formGroup]="reactiveform" (ngSubmit)="onSubmit()">
+        <div class="mb-3 d-flex" style="gap: 30px;">
+            <div class="mb-3 row">
+                <label for="">First Name</label>
+                <div class="grid">
+                    <input type="text" class="col-lg form-control " name="fname" id="fname" formControlName="fname" />
+                    <small *ngIf="reactiveform.get('fname').errors?.['required'] && reactiveform.get('fname').touched">
+                        *This field is required</small>
+                </div>
+            </div>
+            <div class="mb-3  row">
+                <label for="">Last Name</label>
+                <div class="grid auto-fill">
+                    <input type="text" class="col-lg form-control " name="name" id="name" formControlName="lname">
+                    <small *ngIf="reactiveform.get('lname').errors?.['required'] && reactiveform.get('lname').touched">
+                        *This field is required</small>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3  row">
+            <label for="phoneNum">Mobile Number</label>
+            <div class="grid">
+                <input type="tel" class="col-lg form-control" name="phoneNum" id="phoneNum" formControlName="phoneNum">
+                <small *ngIf="reactiveform.get('phoneNum').errors?.['maxlength']">chech the number</small>
+            </div>
+        </div>
+        <div class="mb-3  row">
+            <label for="email">Email</label>
+            <div class="grid auto-fill">
+                <input type="email" class="col-lg form-control" name="email" id="email" formControlName="email">
+                <small *ngIf="reactiveform.get('email').errors?.['email']">*chech you email</small>
+            </div>
+        </div>
+
+        <div class="grid justify-content-center" formGroupName="address">
+            <label for="address" class="mb-2"> Address</label>
+            <div class="place d-flex mb-3" style="gap: 3rem">
+                <div class="country ">
+                    <select name="country" class="form-control" id="country" formControlName="country">
+                        <option value="" disabled selected>Country</option>
+                        <option value="india">India</option>
+                        <option value="us">US</option>
+                        <option value="america">America</option>
+                    </select>
+                </div>
+                <div class="city">
+                    <select name="city" class="form-control" id="city" formControlName="city">
+                        <option value="" disabled selected>City</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="state">
+                    <select name="state" class="form-control" id="state" formControlName="state">
+                        <option value="" disabled selected>State</option>
+                        <option value="mumbai">Maharashtra</option>
+                        <option value="delhi">Bengal</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+              
+            </div>
+            <div class="pincode mb-3">
+                <input type="text" name="pincode" class="form-control" formControlName="pincode" id="pincode"  placeholder="Pincode" >
+            </div>
+            <div class="street mb-3">
+                
+                <textarea name="street" class="form-control" placeholder="street" formControlName="street" id="street" cols="30"
+                    rows="2"></textarea>
+            </div>
+           
+        </div>
+
+        <div class="d-flex justify-content-center mt-5"> <button type="submit" [disabled]="reactiveform.invalid"
+                class="btn btn-warning" style="width: 30%;">
+                Add
+            </button></div>
+    </form>
+</div>
+

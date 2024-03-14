@@ -1,0 +1,70 @@
+form{
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: rgba(69, 69, 69, 0.388);
+}
+select{
+    border: none;
+    border-radius: 10x ;
+    padding:4px 2rem;
+}
+
+small{
+    width: 20%;
+    color: red;
+    font-size: small;
+    margin-top: 0.25rem;
+}
+
+input.ng-invalid.ng-touched{
+    border: red 2px solid;
+  }
+  
+  input.ng-pending{
+    border: yellow 2px solid;
+  }
+  
+  .container.VALID{
+    border: green 3px solid;
+  }
+  .container.INVALID{
+    border: red 3px solid;
+  }
+  .container.PENDING{
+    border: pink 3px solid;
+  }
+  
+   input .ng-invalid, .ng-touched{
+    border: 1px red;
+  }
+
+  /* Adjustments for screens with a width of 682 pixels or less */
+@media (max-width: 682px) {
+    .container.form {
+        padding: 0 10px; /* Add some padding to the container */
+    }
+
+    .mb-3 {
+        margin-bottom: 15px; /* Increase margin bottom for better spacing */
+    }
+
+    .form-control {
+        width: 100%; /* Make form controls full width */
+    }
+
+    .justify-content-center {
+        justify-content: center; /* Center align the content */
+    }
+
+    .mt-5 {
+        margin-top: 20px; /* Adjust top margin */
+    }
+
+    .flex-column {
+        flex-direction: column; /* Change flex direction to column */
+    }
+
+    button.btn {
+        width: 100%; /* Make buttons full width */
+    }
+}

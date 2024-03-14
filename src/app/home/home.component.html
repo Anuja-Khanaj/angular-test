@@ -1,0 +1,15 @@
+<h2 class="text-center my-4">- Cards -</h2>
+<div class="d-flex justify-content-center"  *ngIf="isdisplay">
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div></div>
+<div class="container my-5" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 20px;">
+    <ng-container *ngFor="let item of card">
+        <div class="card" style="width: 15rem;" *ngIf="item.id <= 10">
+            <img src={{item.url}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.title.slice(0,40)}} </h5>
+            </div>
+        </div>
+    </ng-container>
+</div>
